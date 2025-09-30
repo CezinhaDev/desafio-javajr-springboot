@@ -18,25 +18,21 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    // Criar um novo TODO
     @PostMapping
     public List<Todo> create(@RequestBody Todo todo) {
         return todoService.create(todo);
     }
 
-    // Listar todos os TODOs
     @GetMapping
     public List<Todo> list() {
         return todoService.list();
     }
 
-    // Atualizar um TODO
     @PutMapping("/{id}")
     public List<Todo> update(@PathVariable Long id, @RequestBody Todo todo) {
         return todoService.update(id, todo);
     }
 
-    // Deletar um TODO
     @DeleteMapping("/{id}")
     public List<Todo> delete(@PathVariable Long id) {
         return todoService.delete(id);
